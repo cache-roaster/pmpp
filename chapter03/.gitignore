@@ -1,0 +1,6 @@
+stb_image.h
+stb_image_write.h
+
+input.png
+output.png
+output*.png
