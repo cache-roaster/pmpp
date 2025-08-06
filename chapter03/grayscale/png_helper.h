@@ -8,8 +8,10 @@ typedef struct {
   int channels;
 } image_t;
 
-void read_image(const char *file_name, image_t *img);
-void write_image(const char *file_name, image_t *img);
+extern "C" {
+int read_image(const char *filename, image_t *img);
+int write_image(const char *filename, image_t *img);
 void free_image(image_t *img);
+}
 
 #endif

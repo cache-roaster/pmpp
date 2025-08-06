@@ -20,7 +20,7 @@ void read_image(const char *file_name, image_t *img) {
   img->channels = channels;
   img->data = data;
 
-  printf("Read image %s (%d, %d) with %d channels", file_name, width, height, channels);
+  printf("Read image %s (%d, %d) with %d channels\n", file_name, width, height, channels);
 }
 
 void write_image(const char *file_name, image_t *img) {
