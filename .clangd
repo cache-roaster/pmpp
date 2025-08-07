@@ -1,7 +1,6 @@
 CompileFlags:
   Add:
     - -I/usr/local/cuda/include
-    - -std=c++17
   Remove:
     # Remove problematic flags that might interfere with CUDA
     - -W*
