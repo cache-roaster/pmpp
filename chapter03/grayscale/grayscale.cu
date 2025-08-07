@@ -35,10 +35,6 @@ __global__ void cvtGrayScaleKernel(unsigned char *src, unsigned char *dst,
 }
 
 void cvtGrayScaleDevice(image_t *src, image_t *dst) {
-  if (dst->data != NULL) {
-    free(dst->data);
-  }
-
   int width = src->width;
   int height = src->height;
 
@@ -76,9 +72,6 @@ void cvtGrayScaleDevice(image_t *src, image_t *dst) {
 }
 
 void cvtGrayScaleHost(image_t *src, image_t *dst) {
-  if (dst->data != NULL) {
-    free(dst->data);
-  }
 
   dst->height = src->height;
   dst->width = src->width;
@@ -115,6 +108,7 @@ int main(int argc, char *argv[]) {
   read_image(input_file, &image);
 
   image_t gray;
+  gray.data = NULL;
 
   // cvtGrayScaleHost(&image, &gray);
   cvtGrayScaleDevice(&image, &gray);
