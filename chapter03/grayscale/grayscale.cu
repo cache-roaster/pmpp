@@ -69,6 +69,9 @@ void cvtGrayScaleDevice(image_t *src, image_t *dst) {
   dst->data = (unsigned char *)malloc(dst_size);
   cudaMemcpy(dst->data, d_dst, dst_size, cudaMemcpyDeviceToHost);
   cudaCheckError();
+
+  cudaFree(d_src);
+  cudaFree(d_dst);
 }
 
 void cvtGrayScaleHost(image_t *src, image_t *dst) {
